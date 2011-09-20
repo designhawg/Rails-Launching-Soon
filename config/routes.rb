@@ -1,4 +1,8 @@
 RailsLaunchingSoon::Application.routes.draw do
+  get "pages/home"
+  
+  root :to => 'pages#home'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
