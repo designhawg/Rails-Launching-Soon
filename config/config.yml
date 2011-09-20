@@ -1,0 +1,14 @@
+defaults: &defaults
+  :site:
+    :site_name: "My Site"
+    :copyright_name: "copyright123"
+  :css_file: mysite.css
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
