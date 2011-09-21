@@ -1,5 +1,4 @@
 defaults: &defaults
-#  :site_name: "My Site"
   :site:
     :site_name: "My Site"
     :header: "A cool site, coming soon!"
@@ -37,7 +36,9 @@ defaults: &defaults
   # To enable campaign_monitor or mail_chimp enter 'true' into either of them. If you put 'false' it will still show.
   :campaign_monitor: 
   :mail_chimp: true
- 
+  
+  :analytics:
+    :google: ""  # enter google analytics ID - e.g. UA-1030849-93
   
 
 development:
@@ -48,25 +49,3 @@ test:
 
 production:
   <<: *defaults
-
-
-
-
-#  <%= APP_CONFIG[:site][:title] %>
-
-#development: &non_production_settings
-#  :google_analytics:
-#    :api_key: "[Enter Google ID]"
-#  :site:
-#    :title: "[Title]"
-#    :address: "http://localhost:3000/"
-#
-#test:
-#  <<: *non_production_settings
-#
-#production:
-#  :google_analytics:
-#    :api_key: "[Enter Google ID]"
-#  :site:
-#    :title: "[Title]"
-#    :address: "[Address]"
