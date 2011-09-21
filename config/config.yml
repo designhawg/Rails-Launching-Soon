@@ -1,8 +1,17 @@
 defaults: &defaults
+#  :site_name: "My Site"
   :site:
     :site_name: "My Site"
     :copyright_name: "copyright123"
-  :css_file: mysite.css
+  :css_file: http://www.itsasquare.com/themes/landing_pages/CD001/blue/_/css/style_blue.css
+  :html_file_name: default.html.erb
+  :option_to_store_email: db
+  :campaign_monitor_api_key:
+  :campaign_monitor_list_id:
+  :mail_chimp_api_key:
+  :mail_chimp_list_id:
+  :csv_file_name: data.csv
+  :launching_date: July 9, 2020 00:00:00
 
 development:
   <<: *defaults
@@ -12,3 +21,25 @@ test:
 
 production:
   <<: *defaults
+
+
+
+
+#  <%= APP_CONFIG[:site][:title] %>
+
+#development: &non_production_settings
+#  :google_analytics:
+#    :api_key: "[Enter Google ID]"
+#  :site:
+#    :title: "[Title]"
+#    :address: "http://localhost:3000/"
+#
+#test:
+#  <<: *non_production_settings
+#
+#production:
+#  :google_analytics:
+#    :api_key: "[Enter Google ID]"
+#  :site:
+#    :title: "[Title]"
+#    :address: "[Address]"
