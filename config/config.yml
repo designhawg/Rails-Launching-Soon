@@ -2,16 +2,43 @@ defaults: &defaults
 #  :site_name: "My Site"
   :site:
     :site_name: "My Site"
-    :copyright_name: "copyright123"
-  :css_file: 
+    :header: "Under Construction"
+    :tagline: "la la la la"
+    :email: mailto:me@localhost  # mailto: must be kept here to make it a link
+    :facebook: deanpcmad
+    :twitter: deanperry
+    :skype: deanpcmad
+    
+  :css_file: style.css
   :html_file_name: default.html.erb
-  :option_to_store_email: db
+
   :campaign_monitor_api_key:
   :campaign_monitor_list_id:
   :mail_chimp_api_key:
   :mail_chimp_list_id:
-  :csv_file_name: data.csv
-  :launching_date: July 9, 2020 00:00:00
+  
+  :slider_enable: true  # true to enable slider or false to disable it
+  :slider_effect_duration: 2000  # how long should the slider transition effect (fade) last? 1 second = 1000
+  :slider_duration: 8000  # how long should one image be shown? This does not affect the above transition duration.
+  
+  :slider_image1: slider/1.jpg
+  :slider_image2: slider/2.jpg
+  :slider_image3: slider/3.jpg
+  :slider_image4: slider/4.jpg
+  :slider_image5: slider/5.jpg
+  
+  :launch_year: 2020
+  :launch_month: 12  # be aware, because the first month (january) counts as 0. For this reason the 4th month in this case would be not april but may, and the last month is 11 for december.
+  :launch_day: 8
+  :launch_hour: 12
+  :launch_minutes: 30
+  :launch_progress: 34
+  
+  # To enable campaign_monitor or mail_chimp enter 'true' into either of them. If you put 'false' it will still show.
+  :campaign_monitor: true
+  :mail_chimp: true
+ 
+  
 
 development:
   <<: *defaults
