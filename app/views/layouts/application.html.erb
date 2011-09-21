@@ -75,18 +75,24 @@
 			
 			<div id="social">
 				<div id="social-links">
-					<div class="social-link">
-						<a href="http://twitter.com/<%= APP_CONFIG[:site][:twitter] %>" title="Follow me on Twitter!"><img src="assets/twitter.png" alt="Twitter" width="25" /></a>
-						<img src="assets/twitter_grey.png" alt="Twitter" width="25" class="greyscale-img" />
-					</div>
-					<div class="social-link">
-						<a href="http://facebook.com/<%= APP_CONFIG[:site][:facebook] %>" title="Watch out on Facebook!"><img src="assets/facebook.png" alt="Facebook" width="25" /></a>
-						<img src="assets/facebook_grey.png" alt="Facebook" width="25" class="greyscale-img" />
-					</div>
-					<div class="social-link">
-						<a href="skype://<%= APP_CONFIG[:site][:skype] %>" title="Let's talk on Skype!"><img src="assets/skype.png" alt="Skype" width="25" /></a>
-						<img src="assets/skype_grey.png" alt="Skype" width="25" class="greyscale-img" />
-					</div>
+					<% if APP_CONFIG[:site][:twitter] %>
+						<div class="social-link">
+							<a href="http://twitter.com/<%= APP_CONFIG[:site][:twitter] %>" title="Follow me on Twitter!"><img src="assets/twitter.png" alt="Twitter" width="25" /></a>
+							<img src="assets/twitter_grey.png" alt="Twitter" width="25" class="greyscale-img" />
+						</div>
+					<% end %>
+					<% if APP_CONFIG[:site][:facebook] %>
+						<div class="social-link">
+							<a href="http://facebook.com/<%= APP_CONFIG[:site][:facebook] %>" title="Watch out on Facebook!"><img src="assets/facebook.png" alt="Facebook" width="25" /></a>
+							<img src="assets/facebook_grey.png" alt="Facebook" width="25" class="greyscale-img" />
+						</div>
+					<% end %>
+					<% if APP_CONFIG[:site][:skype] %>
+						<div class="social-link">
+							<a href="skype://<%= APP_CONFIG[:site][:skype] %>" title="Let's talk on Skype!"><img src="assets/skype.png" alt="Skype" width="25" /></a>
+							<img src="assets/skype_grey.png" alt="Skype" width="25" class="greyscale-img" />
+						</div>
+					<% end %>
 					<div class="clear"></div>
 				</div>
 				<span id="social-text">
