@@ -52,6 +52,27 @@
 					<div class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: <%= APP_CONFIG[:launch_progress] %>%; "><%= APP_CONFIG[:launch_progress] %>%</div>
 				</div>
 			<% end %>
+			
+			<% if APP_CONFIG[:mail_chimp] %>
+				<div id="progress-text1">Sign up for updates</div>
+				<form action="http://user.us2.list-manage1.com/subscribe/post" method="post" id="progressbar">
+					<input type="hidden" name="u" value="c5f92ecdb48715432fdb7731f">
+					<input type="hidden" name="id" value="eae4dded6e">
+					<input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="35" placeholder="email address">
+					<input type="submit" value="Subscribe">
+				</form>
+			<% end %>
+			
+			<% if APP_CONFIG[:campaign_monitor] %>
+				<div id="progress-text1">Sign up for updates</div>
+				<form action="http://user.createsend.com/t/r/s/fhltyr/" method="post" id="progressbar">
+					<div>
+						<input type="text" name="cm-fhltyr-fhltyr" id="fhltyr-fhltyr" size="35" placeholder="email" style="float: left;margin-top: 3px;margin-left: 5px;" />
+						<input type="submit" value="Subscribe" style="float: right;margin-top: 3px;margin-right: 5px;" />
+					</div>
+				</form>
+			<% end %>
+			
 			<div id="social">
 				<div id="social-links">
 					<div class="social-link">
