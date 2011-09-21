@@ -2,8 +2,8 @@ defaults: &defaults
 #  :site_name: "My Site"
   :site:
     :site_name: "My Site"
-    :header: "Under Construction"
-    :tagline: "la la la la"
+    :header: "A cool site, coming soon!"
+    :tagline: "Yes! We will be launching very, very, very soon!"
     :email: mailto:me@localhost  # mailto: must be kept here to make it a link
     :facebook: deanpcmad
     :twitter: deanperry
@@ -35,7 +35,7 @@ defaults: &defaults
   :launch_progress:  # to disable the launch progress bar, don't enter anything here.
   
   # To enable campaign_monitor or mail_chimp enter 'true' into either of them. If you put 'false' it will still show.
-  :campaign_monitor: true
+  :campaign_monitor: 
   :mail_chimp: true
  
   
