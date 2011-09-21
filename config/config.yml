@@ -3,7 +3,7 @@ defaults: &defaults
   :site:
     :site_name: "My Site"
     :copyright_name: "copyright123"
-  :css_file: http://www.itsasquare.com/themes/landing_pages/CD001/blue/_/css/style_blue.css
+  :css_file: 
   :html_file_name: default.html.erb
   :option_to_store_email: db
   :campaign_monitor_api_key:
