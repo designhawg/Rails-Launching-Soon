@@ -32,7 +32,7 @@ defaults: &defaults
   :launch_day: 8
   :launch_hour: 12
   :launch_minutes: 30
-  :launch_progress: 34
+  :launch_progress:  # to disable the launch progress bar, don't enter anything here.
   
   # To enable campaign_monitor or mail_chimp enter 'true' into either of them. If you put 'false' it will still show.
   :campaign_monitor: true
