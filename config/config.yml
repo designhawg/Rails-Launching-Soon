@@ -9,13 +9,7 @@ defaults: &defaults
     :skype: deanpcmad
     
   :css_file: style.css
-  :html_file_name: default.html.erb
 
-  :campaign_monitor_api_key:
-  :campaign_monitor_list_id:
-  :mail_chimp_api_key:
-  :mail_chimp_list_id:
-  
   :slider_enable: true  # true to enable slider or false to disable it
   :slider_effect_duration: 2000  # how long should the slider transition effect (fade) last? 1 second = 1000
   :slider_duration: 8000  # how long should one image be shown? This does not affect the above transition duration.
