@@ -29,8 +29,7 @@ defaults: &defaults
   :launch_progress:  # to disable the launch progress bar, don't enter anything here.
   
   # To enable campaign_monitor or mail_chimp enter 'true' into either of them. If you put 'false' it will still show.
-    # there seems to be a bug that when mail_chimp is set to 'true', campaign_monitor shows and vice versa.
-  :campaign_monitor: 
+  :campaign_monitor: false
   :campaign_monitor_url: "user1"  
   :campaign_monitor_hidden_u: "c5f92ebdb48215432jdb7761f"
   :campaign_monitor_hidden_id: "eae7deeh6e"

@@ -45,24 +45,31 @@
 				</div>
 			<% end %>
 			
-			<% if APP_CONFIG[:mail_chimp] %>
+			<% if APP_CONFIG[:campaign_monitor] == true %>
+			<!-- campaign monitor -->
 				<div id="progress-text1">Sign up for updates</div>
-				<form action="http://<%= APP_CONFIG[:mail_chimp_url] %>.createsend.com/t/r/s/fhltyr/" method="post" id="progressbar">
-					<input type="hidden" name="u" value="<%= APP_CONFIG[:mail_chimp_hidden_u] %>">
-					<input type="hidden" name="id" value="<%= APP_CONFIG[:mail_chimp_hidden_id] %>">
+				<form action="http://<%= APP_CONFIG[:campaign_monitor_url] %>.createsend.com/t/r/s/fhltyr/" method="post" id="progressbar">
+					<input type="hidden" name="u" value="<%= APP_CONFIG[:campaign_monitor_hidden_u] %>">
+					<input type="hidden" name="id" value="<%= APP_CONFIG[:campaign_monitor_hidden_id] %>">
 					<input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="35" placeholder="email address" style="float: left;margin-top: 3px;margin-left: 5px;">
 					<input type="submit" value="Subscribe" style="float: right;margin-top: 3px;margin-right: 5px;">
 				</form>
+			<% else %>
+				<!-- campaign_monitor false -->
 			<% end %>
-			
-			<% if APP_CONFIG[:campaign_monitor] %>
+
+			<% if APP_CONFIG[:mail_chimp] == true %>
+			<!-- mailchimp -->
 				<div id="progress-text1">Sign up for updates</div>
-				<form action="http://<%= APP_CONFIG[:campaign_monitor_url] %>.us2.list-manage1.com/subscribe/post" method="post" id="progressbar">
-					<div>
-						<input type="text" name="cm-fhltyr-fhltyr" id="fhltyr-fhltyr" size="35" placeholder="email" style="float: left;margin-top: 3px;margin-left: 5px;" />
-						<input type="submit" value="Subscribe" style="float: right;margin-top: 3px;margin-right: 5px;" />
-					</div>
+				<form action="http://<%= APP_CONFIG[:mail_chimp_url] %>.us2.list-manage1.com/subscribe/post" method="post" id="progressbar">
+				<div>
+					<input type="text" name="cm-fhltyr-fhltyr" id="fhltyr-fhltyr" size="35" placeholder="email" style="float: left;margin-top: 3px;margin-left: 5px;" />
+					<input type="submit" value="Subscribe" style="float: right;margin-top: 3px;margin-right: 5px;" />
+				</div>
 				</form>
+
+			<% else %>
+				<!-- mail_chimp false -->
 			<% end %>
 			
 			<div id="social">
