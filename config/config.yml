@@ -30,12 +30,15 @@ defaults: &defaults
   
   # To enable campaign_monitor or mail_chimp enter 'true' into either of them. If you put 'false' it will still show.
   :campaign_monitor: false
-  :campaign_monitor_url: "user1"  
-  :campaign_monitor_hidden_u: "c5f92ebdb48215432jdb7761f"
-  :campaign_monitor_hidden_id: "eae7deeh6e"
+  :campaign_monitor_url: "user"  
+
     
   :mail_chimp: true
-  :mail_chimp_url: "user123"  # This is the url in the form action. You may just need to change to your username
+  :mail_chimp_url: "user"  # This is the url in the form action. You may just need to change to your username
+  :mail_chimp_hidden_u: "c5f92ebdb48215432jdb7761f"
+  :mail_chimp_hidden_id: "eae4dded6e"
+  :mail_chimp_server_id: "us2"
+  
 
   :analytics:
     :google: ""  # enter google analytics ID - e.g. UA-1030849-93
