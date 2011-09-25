@@ -20,6 +20,7 @@ defaults: &defaults
   :slider_image4: slider/4.jpg
   :slider_image5: slider/5.jpg
   
+  :launch_enable: true # true to enable countdown or nothing to disable it
   :launch_year: 2020
   :launch_month: 12  # be aware, because the first month (january) counts as 0. For this reason the 4th month in this case would be not april but may, and the last month is 11 for december.
   :launch_day: 8
@@ -28,9 +29,15 @@ defaults: &defaults
   :launch_progress:  # to disable the launch progress bar, don't enter anything here.
   
   # To enable campaign_monitor or mail_chimp enter 'true' into either of them. If you put 'false' it will still show.
+    # there seems to be a bug that when mail_chimp is set to 'true', campaign_monitor shows and vice versa.
   :campaign_monitor: 
+  :campaign_monitor_url: "user1"  
+  :campaign_monitor_hidden_u: "c5f92ebdb48215432jdb7761f"
+  :campaign_monitor_hidden_id: "eae7deeh6e"
+    
   :mail_chimp: true
-  
+  :mail_chimp_url: "user123"  # This is the url in the form action. You may just need to change to your username
+
   :analytics:
     :google: ""  # enter google analytics ID - e.g. UA-1030849-93
   
