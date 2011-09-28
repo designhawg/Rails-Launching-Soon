@@ -9,12 +9,12 @@ defaults: &defaults
     :twitter: deanperry
     :skype: deanpcmad
     
-  :theme: theme3
+  :theme: theme1
   # Theme 1 - theme1/style.css
   # Theme 2 - theme2/black.css theme2/blue.css theme2/green.css theme2/indigo.css theme2/orange.css theme2/red.css theme2/violet.css theme2/yellow.css
   # Theme 3 - theme3/style.css
   # Theme 4 - theme4/style.css
-  :css_file: theme3/style.css
+  :css_file: theme1/style.css
   
   # Theme 1 config stuff
   :theme1:
@@ -52,18 +52,19 @@ defaults: &defaults
   :subscribe_enable: true
   
   # To enable campaign_monitor or mail_chimp enter 'true' into either of them. If you put 'false' it will still show.
-  :campaign_monitor: true
+  :campaign_monitor: false
   :campaign_monitor_url: "deanperry"
   :campaign_monitor_form_code: fuiirj
     
-  :mail_chimp: false
+  :mail_chimp: true
   :mail_chimp_url: "user"  # This is the url in the form action. You may just need to change to your username
   :mail_chimp_hidden_u: "c5f92ebdb48215432jdb7761f"
   :mail_chimp_hidden_id: "eae4dded6e"
   :mail_chimp_server_id: "us2"
   
   :analytics:
-    :google: ""  # enter google analytics ID - e.g. UA-1030849-93
+    :google_enable: true
+    :google_id: ""  # enter google analytics ID - e.g. UA-1030849-93
   
 
 development:
