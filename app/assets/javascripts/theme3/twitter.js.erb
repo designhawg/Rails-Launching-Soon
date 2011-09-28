@@ -27,9 +27,9 @@ function relative_time(time_value) {
 //call Twitter script on DOM ready with jQuery
 jQuery(document).ready(function($) {
 									
-	var username = 'envato'; //dont forget to insert your Twitter username here
+	var username = '<%= APP_CONFIG[:site][:twitter] %>'; //dont forget to insert your Twitter username here
 
-	$.get('php/proxy.php?url=http://twitter.com/statuses/user_timeline/' + username + '.rss?count=1', function(tweets) { //make sure the path to the proxy.php file is correct
+	$.get('https://twitter.com/statuses/user_timeline/' + username + '.rss?count=1', function(tweets) { //make sure the path to the proxy.php file is correct
 		$(tweets).find('item').each(function() {
 			var tweet = $(this);
 			var pattern = new RegExp("^"+username+": ","g");

@@ -16,16 +16,13 @@
 			<div id="defaultCountdown"></div>
 			<p>We're aiming to launch on June 5 2013. Be sure to follow us on Twitter and subscribe to our newsletter to be notified when we blast off!</p>
 		</section>
-		
 		<section class="col-2 tweets">
-			<h2>Twitter <a href="#" title="Follow us on Twitter" class="tooltip">Follow us</a></h2>
+			<h2>Twitter <a href="http://twitter.com/<%= APP_CONFIG[:site][:twitter] %>" title="Follow us on Twitter" class="tooltip">Follow us</a></h2>
 			<ul id="twitter_update_list"><li><p class="tweet">&nbsp;</p></li></ul>
 		</section>
-		
 		<section class="col-3">
 			<h2>Subscribe</h2>
 			<p>Sign up to our newsletter and receive a notification when we launch!</p>
-			
 			<% if APP_CONFIG[:campaign_monitor] == true %>
 			<!-- campaign monitor -->
 				<form action="http://<%= APP_CONFIG[:campaign_monitor_url] %>.createsend.com/t/r/s/fhltyr/" method="post" id="subForm" class="signup">
@@ -37,7 +34,6 @@
 			<% else %>
 				<!-- campaign_monitor false -->
 			<% end %>
-
 			<% if APP_CONFIG[:mail_chimp] == true %>
 			<!-- mailchimp -->
 				<form action="http://<%= APP_CONFIG[:mail_chimp_url] %>.<%= APP_CONFIG[:mail_chimp_server_id] %>.list-manage1.com/subscribe/post" method="post" id="progressbar" class="signup">
@@ -50,44 +46,23 @@
 						</div>
 					</p>
 				</form>
-
 			<% else %>
 				<!-- mail_chimp false -->
 			<% end %>
-			
-			
-			
 		</section>
-	
 	</article>
-    
     <footer id="footer">
-    
 			<p>&copy; 2011 <%= link_to APP_CONFIG[:site][:site_name], root_url %> . Powered by <%= link_to 'Rails Launching Soon', 'http://github.com/deanperry/Rails-Launching-Soon' %>.</p>
-
     </footer>
-    
-  </div> <!--! end of #wrapper -->
-
-
-
-  <!-- Javascript at the bottom for fast page loading -->
-
-  <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+  </div>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.4.2.min.js"%3E%3C/script%3E'))</script>
   
-<%= javascript_include_tag 'theme2/plugins.js' %>
-<%= javascript_include_tag 'theme2/script.js' %>
-  
-  
+	<%= javascript_include_tag 'theme2/plugins.js' %>
+	<%= javascript_include_tag 'theme2/script.js' %>
   <!--[if lt IE 7 ]>
-    <script src="js/libs/dd_belatedpng.js"></script>
+		<%= javascript_include_tag 'DD_belatedPNG.js' %>
     <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
   <![endif]-->
-  
-  <!-- Load the Twitter javascript last -->
-  
   <script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
   <script type="text/javascript" src="http://twitter.com/statuses/user_timeline/<%= APP_CONFIG[:site][:twitter] %>.json?callback=twitterCallback2&count=2"></script>
   

@@ -1,14 +1,12 @@
 <%= render 'layouts/header'%>
+<%= javascript_include_tag 'theme1/scripts.js' %>
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold' rel='stylesheet' type='text/css'>
-
 	<!--[if lt IE 9]>
 		<%= stylesheet_link_tag 'iesucks' %>
 		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js">var IE7_PNG_SUFFIX = ".png";</script>
 	<![endif]-->
-
 </head>
 <body>
-	
 <div id="root">
 	<div id="under-construction">
 		<h1><%= APP_CONFIG[:site][:header] %></h1>
@@ -18,21 +16,18 @@
 	<div id="countdown"></div>
 	<% end %>
 	<div id="slider">
-		
 		<div id="imgcontainer">
-			<%= image_tag APP_CONFIG[:slider_image1], :alt => "", :title => "", :class => "sliderimg" %>
-			<%= image_tag APP_CONFIG[:slider_image2], :alt => "", :title => "", :class => "sliderimg" %>
-			<%= image_tag APP_CONFIG[:slider_image3], :alt => "", :title => "", :class => "sliderimg" %>
+			<%= image_tag APP_CONFIG[:theme1][:slider_image1], :alt => "", :title => "", :class => "sliderimg" %>
+			<%= image_tag APP_CONFIG[:theme1][:slider_image2], :alt => "", :title => "", :class => "sliderimg" %>
+			<%= image_tag APP_CONFIG[:theme1][:slider_image3], :alt => "", :title => "", :class => "sliderimg" %>
 		</div>
-		
 		<div id="slider-bottom">
-			<% if APP_CONFIG[:launch_progress] %>
+			<% if APP_CONFIG[:progress_enable] == true %>
 				<div id="progress-text1">Current Progress:</div>
 				<div id="progressbar" class="ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="56">
 					<div class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: <%= APP_CONFIG[:launch_progress] %>%; "><%= APP_CONFIG[:launch_progress] %>%</div>
 				</div>
 			<% end %>
-			
 			<% if APP_CONFIG[:campaign_monitor] == true %>
 			<!-- campaign monitor -->
 				<div id="progress-text1">Sign up for updates</div>
@@ -45,7 +40,6 @@
 			<% else %>
 				<!-- campaign_monitor false -->
 			<% end %>
-
 			<% if APP_CONFIG[:mail_chimp] == true %>
 			<!-- mailchimp -->
 				<div id="progress-text1">Sign up for updates</div>
@@ -57,11 +51,9 @@
 					<input type="submit" value="Subscribe" style="float: right;margin-top: 3px;margin-right: 5px;" />
 				</div>
 				</form>
-
 			<% else %>
 				<!-- mail_chimp false -->
 			<% end %>
-
 			<div id="social">
 				<div id="social-links">
 					<% if APP_CONFIG[:site][:twitter] %>
@@ -90,7 +82,6 @@
 			</div>
 		</div>
 	</div>
-	
 	<div id="shadow"></div>
 </div>	
 
