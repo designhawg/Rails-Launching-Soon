@@ -9,42 +9,51 @@ defaults: &defaults
     :twitter: deanperry
     :skype: deanpcmad
     
-  :theme: theme3
-  :css_file: theme3/main.css
+  :theme: theme4
   # Theme 1 - theme1/style.css
   # Theme 2 - theme2/black.css theme2/blue.css theme2/green.css theme2/indigo.css theme2/orange.css theme2/red.css theme2/violet.css theme2/yellow.css
   # Theme 3 - theme3/main.css
+  # Theme 4 - theme4/style.css
+  :css_file: theme4/style.css
   
+  # Theme 1 config stuff
+  :theme1:
+    :slider_enable: true  # true to enable slider or false to disable it
+    :slider_effect_duration: 2000  # how long should the slider transition effect (fade) last? 1 second = 1000
+    :slider_duration: 8000  # how long should one image be shown for? This does not affect the above transition duration.
+    :slider_image1: theme1/slider/1.jpg
+    :slider_image2: theme1/slider/2.jpg
+    :slider_image3: theme1/slider/3.jpg
+    :slider_image4: theme1/slider/4.jpg
+    :slider_image5: theme1/slider/5.jpg
   
   # Theme 3 config stuff
   :theme3:
     :logo: logo.png
     :pattern: circles  # patterns include - circles, crosses-pattern, diagonal-pattern, grid-pattern, linen-pattern
     :colour: blue    # colours include - red, blue, black, orange, yellow
+  
+  # Theme 4 config stuff
+  :theme4:
+    :colour: green  # colours include - black, blue, dark_green, green, white
+    :background: background.jpg  # leave blank for the default backgrounds
 
-  :slider_enable: true  # true to enable slider or false to disable it
-  :slider_effect_duration: 2000  # how long should the slider transition effect (fade) last? 1 second = 1000
-  :slider_duration: 8000  # how long should one image be shown? This does not affect the above transition duration.
-  
-  :slider_image1: theme1/slider/1.jpg
-  :slider_image2: theme1/slider/2.jpg
-  :slider_image3: theme1/slider/3.jpg
-  :slider_image4: theme1/slider/4.jpg
-  :slider_image5: theme1/slider/5.jpg
-  
-  :launch_enable: true # true to enable countdown or nothing to disable it
+  :launch_enable: true # true to enable countdown
   :launch_date: "December 8 2020"
   :launch_year: 2020
   :launch_month: 12  # be aware, because the first month (january) counts as 0. For this reason the 4th month in this case would be not april but may, and the last month is 11 for december.
   :launch_day: 8
   :launch_hour: 12
   :launch_minutes: 30
-  :launch_progress:  # to disable the launch progress bar, don't enter anything here.
+  :progress_enable: true
+  :launch_progress: 15% # to disable the launch progress bar, don't enter anything here. MUST be a %
+  
+  :twitter_enable: true
+  :subscribe_enable: true
   
   # To enable campaign_monitor or mail_chimp enter 'true' into either of them. If you put 'false' it will still show.
   :campaign_monitor: false
   :campaign_monitor_url: "user"  
-
     
   :mail_chimp: true
   :mail_chimp_url: "user"  # This is the url in the form action. You may just need to change to your username
@@ -52,7 +61,6 @@ defaults: &defaults
   :mail_chimp_hidden_id: "eae4dded6e"
   :mail_chimp_server_id: "us2"
   
-
   :analytics:
     :google: ""  # enter google analytics ID - e.g. UA-1030849-93
   
