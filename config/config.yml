@@ -8,7 +8,7 @@ defaults: &defaults
     :twitter: deanperry
     :skype: deanpcmad
     
-  :css_file: style.css
+  :css_file: theme1/style.css
   
   :theme: theme1
 
@@ -16,11 +16,11 @@ defaults: &defaults
   :slider_effect_duration: 2000  # how long should the slider transition effect (fade) last? 1 second = 1000
   :slider_duration: 8000  # how long should one image be shown? This does not affect the above transition duration.
   
-  :slider_image1: slider/1.jpg
-  :slider_image2: slider/2.jpg
-  :slider_image3: slider/3.jpg
-  :slider_image4: slider/4.jpg
-  :slider_image5: slider/5.jpg
+  :slider_image1: theme1/slider/1.jpg
+  :slider_image2: theme1/slider/2.jpg
+  :slider_image3: theme1/slider/3.jpg
+  :slider_image4: theme1/slider/4.jpg
+  :slider_image5: theme1/slider/5.jpg
   
   :launch_enable: true # true to enable countdown or nothing to disable it
   :launch_year: 2020
