@@ -12,7 +12,7 @@ defaults: &defaults
   :theme: theme2
   :css_file: theme2/blue.css
   # Theme 1 - theme1/style.css
-  # Theme 2 - theme2/blue.css theme2/red.css
+  # Theme 2 - theme2/black.css theme2/blue.css theme2/green.css theme2/indigo.css theme2/orange.css theme2/red.css theme2/violet.css theme2/yellow.css
 
   :slider_enable: true  # true to enable slider or false to disable it
   :slider_effect_duration: 2000  # how long should the slider transition effect (fade) last? 1 second = 1000
@@ -25,6 +25,7 @@ defaults: &defaults
   :slider_image5: theme1/slider/5.jpg
   
   :launch_enable: true # true to enable countdown or nothing to disable it
+  :launch_date: "December 8 2020"
   :launch_year: 2020
   :launch_month: 12  # be aware, because the first month (january) counts as 0. For this reason the 4th month in this case would be not april but may, and the last month is 11 for december.
   :launch_day: 8
