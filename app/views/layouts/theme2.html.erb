@@ -1,59 +1,20 @@
-
-<!doctype html>  
-
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-
-  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-  <title></title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-
-  <!-- CSS : implied media="all" -->
-  <link rel="stylesheet" href="css/blue.css?v=2">
- 
-  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
-  <script src="js/libs/modernizr-1.6.min.js"></script>
-
+<%= render 'layouts/header'%>
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<%= javascript_include_tag 'theme2/modernizr-1.6.min.js' %>
 </head>
 
 <body>
 
   <div id="wrapper">
-  
   	<header id="header">
-  	
-  		<h1>Coming soon!</h1>
-  		
-  		<p>ComingSoon is a simple holding page template displaying a countdown, a Twitter feed and a newsletter signup. Perfect for the development period of your next venture!</p>
-  	
+  		<h1><%= APP_CONFIG[:site][:header]%></h1>
+  		<p><%= APP_CONFIG[:site][:info]%></p>
   	</header>
-    	
 	<article class="main">
-	
 		<section class="col-1">
-		
 			<h2>Launching in T-minus...</h2>
-			
 			<div id="defaultCountdown"></div>
-			
 			<p>We're aiming to launch on June 5 2013. Be sure to follow us on Twitter and subscribe to our newsletter to be notified when we blast off!</p>
-			
 		</section>
 		
 		<section class="col-2 tweets">
@@ -81,7 +42,7 @@
     
     <footer id="footer">
     
-    	<p>Any footer copy would go down here.</p>
+			<p>&copy; 2011 <%= link_to APP_CONFIG[:site][:site_name], root_url %> . Powered by <%= link_to 'Rails Launching Soon', 'http://github.com/deanperry/Rails-Launching-Soon' %>.</p>
 
     </footer>
     
@@ -95,10 +56,8 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.4.2.min.js"%3E%3C/script%3E'))</script>
   
-  <!-- scripts concatenated and minified via ant build script-->
-  <script src="js/plugins.js"></script>
-  <script src="js/script.js"></script>
-  <!-- end concatenated and minified scripts-->
+<%= javascript_include_tag 'theme2/plugins.js' %>
+<%= javascript_include_tag 'theme2/script.js' %>
   
   
   <!--[if lt IE 7 ]>
@@ -109,7 +68,6 @@
   <!-- Load the Twitter javascript last -->
   
   <script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
-  <script type="text/javascript" src="http://twitter.com/statuses/user_timeline/envato.json?callback=twitterCallback2&count=2"></script>
+  <script type="text/javascript" src="http://twitter.com/statuses/user_timeline/<%= APP_CONFIG[:site][:twitter] %>.json?callback=twitterCallback2&count=2"></script>
   
-</body>
-</html>
+<%= render 'layouts/footer'%>
