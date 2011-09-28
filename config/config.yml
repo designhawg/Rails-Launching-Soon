@@ -9,12 +9,12 @@ defaults: &defaults
     :twitter: deanperry
     :skype: deanpcmad
     
-  :theme: theme1
+  :theme: theme3
   # Theme 1 - theme1/style.css
   # Theme 2 - theme2/black.css theme2/blue.css theme2/green.css theme2/indigo.css theme2/orange.css theme2/red.css theme2/violet.css theme2/yellow.css
-  # Theme 3 - theme3/main.css
+  # Theme 3 - theme3/style.css
   # Theme 4 - theme4/style.css
-  :css_file: theme1/style.css
+  :css_file: theme3/style.css
   
   # Theme 1 config stuff
   :theme1:
