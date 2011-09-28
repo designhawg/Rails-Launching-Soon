@@ -31,9 +31,9 @@
 			<% if APP_CONFIG[:campaign_monitor] == true %>
 			<!-- campaign monitor -->
 				<div id="progress-text1">Sign up for updates</div>
-				<form action="http://<%= APP_CONFIG[:campaign_monitor_url] %>.createsend.com/t/r/s/fhltyr/" method="post" id="subForm">
+				<form action="http://<%= APP_CONFIG[:campaign_monitor_url] %>.createsend.com/t/r/s/<%= APP_CONFIG[:campaign_monitor_form_code] %>/" method="post" id="subForm">
 				<div id="progressbar">
-					<input type="text" name="cm-fhltyr-fhltyr" id="fhltyr-fhltyr" size="35" placeholder="email address" style="float: left;margin-top: 3px;margin-left: 5px;" />
+					<input type="text" name="cm-<%= APP_CONFIG[:campaign_monitor_form_code] %>-<%= APP_CONFIG[:campaign_monitor_form_code] %>" id="<%= APP_CONFIG[:campaign_monitor_form_code] %>-<%= APP_CONFIG[:campaign_monitor_form_code] %>" size="35" placeholder="email address" style="float: left;margin-top: 3px;margin-left: 5px;" />
 					<input type="submit" value="Subscribe" style="float: right;margin-top: 3px;margin-right: 5px;" />
 				</div>
 				</form>

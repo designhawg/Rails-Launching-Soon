@@ -58,9 +58,9 @@ body{
 		<div id='action'>
 			<% if APP_CONFIG[:campaign_monitor] == true %>
 			<!-- campaign monitor -->
-				<form action="http://<%= APP_CONFIG[:campaign_monitor_url] %>.createsend.com/t/r/s/fhltyr/" method="post" id="contact">
+				<form action="http://<%= APP_CONFIG[:campaign_monitor_url] %>.createsend.com/t/r/s/<%= APP_CONFIG[:campaign_monitor_form_code] %>/" method="post" id="contact">
 				<fieldset id='form-container'>
-					<input type="text" name="cm-fhltyr-fhltyr" id="email" placeholder="Enter Your Email Address, Get notified!" class='required' />
+					<input type="text" name="cm-<%= APP_CONFIG[:campaign_monitor_form_code] %>-<%= APP_CONFIG[:campaign_monitor_form_code] %>" id="email" placeholder="Enter Your Email Address, Get notified!" class='required' />
 					<input type="submit" value="Subscribe" id="submit" class='required email' />
 				</fieldset>
 				</form>

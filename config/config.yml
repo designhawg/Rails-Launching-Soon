@@ -52,10 +52,11 @@ defaults: &defaults
   :subscribe_enable: true
   
   # To enable campaign_monitor or mail_chimp enter 'true' into either of them. If you put 'false' it will still show.
-  :campaign_monitor: false
-  :campaign_monitor_url: "user"  
+  :campaign_monitor: true
+  :campaign_monitor_url: "deanperry"
+  :campaign_monitor_form_code: fuiirj
     
-  :mail_chimp: true
+  :mail_chimp: false
   :mail_chimp_url: "user"  # This is the url in the form action. You may just need to change to your username
   :mail_chimp_hidden_u: "c5f92ebdb48215432jdb7761f"
   :mail_chimp_hidden_id: "eae4dded6e"

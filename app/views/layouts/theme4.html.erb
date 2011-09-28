@@ -159,9 +159,9 @@ header { background-image: url(/assets/theme4/bg_header_white.png); }
 				<% if APP_CONFIG[:campaign_monitor] == true %>
 				<!-- campaign monitor -->
 				<section class="subscribe">
-					<form action="http://<%= APP_CONFIG[:campaign_monitor_url] %>.createsend.com/t/r/s/fhltyr/" method="post" id="contact">
+					<form action="http://<%= APP_CONFIG[:campaign_monitor_url] %>.createsend.com/t/r/s/<%= APP_CONFIG[:campaign_monitor_form_code] %>/" method="post" id="contact">
 					<fieldset id='form-container'>
-						<input type="text" name="cm-fhltyr-fhltyr" id="email" placeholder="Your email address..." id="email"/>
+						<input type="text" name="cm-<%= APP_CONFIG[:campaign_monitor_form_code] %>-<%= APP_CONFIG[:campaign_monitor_form_code] %>" id="email" placeholder="Your email address..." id="email"/>
 						<input type="submit" value="Subscribe" class="submit" />
 					</fieldset>
 					</form>

@@ -25,9 +25,9 @@
 			<p>Sign up to our newsletter and receive a notification when we launch!</p>
 			<% if APP_CONFIG[:campaign_monitor] == true %>
 			<!-- campaign monitor -->
-				<form action="http://<%= APP_CONFIG[:campaign_monitor_url] %>.createsend.com/t/r/s/fhltyr/" method="post" id="subForm" class="signup">
+				<form action="http://<%= APP_CONFIG[:campaign_monitor_url] %>.createsend.com/t/r/s/<%= APP_CONFIG[:campaign_monitor_form_code] %>/" method="post" id="subForm" class="signup">
 				<div class="signup">
-					<input type="text" name="cm-fhltyr-fhltyr" id="fhltyr-fhltyr" size="35" placeholder="email address" class="input-text"/>
+					<input type="text" name="cm-<%= APP_CONFIG[:campaign_monitor_form_code] %>-<%= APP_CONFIG[:campaign_monitor_form_code] %>" id="<%= APP_CONFIG[:campaign_monitor_form_code] %>-<%= APP_CONFIG[:campaign_monitor_form_code] %>" size="35" placeholder="email address" class="input-text"/>
 					<input type="submit" value="Go" class="button"/>
 				</div>
 				</form>
