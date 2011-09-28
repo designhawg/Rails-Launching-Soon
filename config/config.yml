@@ -9,10 +9,18 @@ defaults: &defaults
     :twitter: deanperry
     :skype: deanpcmad
     
-  :theme: theme2
-  :css_file: theme2/blue.css
+  :theme: theme3
+  :css_file: theme3/main.css
   # Theme 1 - theme1/style.css
   # Theme 2 - theme2/black.css theme2/blue.css theme2/green.css theme2/indigo.css theme2/orange.css theme2/red.css theme2/violet.css theme2/yellow.css
+  # Theme 3 - theme3/main.css
+  
+  
+  # Theme 3 config stuff
+  :theme3:
+    :logo: logo.png
+    :pattern: circles  # patterns include - circles, crosses-pattern, diagonal-pattern, grid-pattern, linen-pattern
+    :colour: blue    # colours include - red, blue, black, orange, yellow
 
   :slider_enable: true  # true to enable slider or false to disable it
   :slider_effect_duration: 2000  # how long should the slider transition effect (fade) last? 1 second = 1000
