@@ -25,17 +25,38 @@
 		<section class="col-3">
 			<h2>Subscribe</h2>
 			<p>Sign up to our newsletter and receive a notification when we launch!</p>
-			<form class="signup">
-				<p>
-					<label for="email">
-						Email
-					</label>
-					<div class="signup">
-						<input class="input-text" placeholder="email@email.com" type="email" />
-						<input type="submit" value="Go" class="button" />
-					</div>
-				</p>
-			</form>
+			
+			<% if APP_CONFIG[:campaign_monitor] == true %>
+			<!-- campaign monitor -->
+				<form action="http://<%= APP_CONFIG[:campaign_monitor_url] %>.createsend.com/t/r/s/fhltyr/" method="post" id="subForm" class="signup">
+				<div class="signup">
+					<input type="text" name="cm-fhltyr-fhltyr" id="fhltyr-fhltyr" size="35" placeholder="email address" class="input-text"/>
+					<input type="submit" value="Go" class="button"/>
+				</div>
+				</form>
+			<% else %>
+				<!-- campaign_monitor false -->
+			<% end %>
+
+			<% if APP_CONFIG[:mail_chimp] == true %>
+			<!-- mailchimp -->
+				<form action="http://<%= APP_CONFIG[:mail_chimp_url] %>.<%= APP_CONFIG[:mail_chimp_server_id] %>.list-manage1.com/subscribe/post" method="post" id="progressbar" class="signup">
+					<input type="hidden" name="u" value="<%= APP_CONFIG[:mail_chimp_hidden_u] %>">
+					<input type="hidden" name="id" value="<%= APP_CONFIG[:mail_chimp_hidden_id] %>">
+					<p>
+						<div class="signup">
+							<input type="email" class="input-text" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="35" placeholder="email@email.com" >
+							<input type="submit" value="Go" class="button"  />
+						</div>
+					</p>
+				</form>
+
+			<% else %>
+				<!-- mail_chimp false -->
+			<% end %>
+			
+			
+			
 		</section>
 	
 	</article>
