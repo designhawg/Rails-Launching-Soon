@@ -3,14 +3,16 @@ defaults: &defaults
     :site_name: "My Site"
     :header: "A cool site, coming soon!"
     :tagline: "Yes! We will be launching very, very, very soon!"
+    :info: "This is going to be the most awesome-ness site you are ever going to see! Sign up below to find out more!"
     :email: mailto:me@localhost  # mailto: must be kept here to make it a link
     :facebook: deanpcmad
     :twitter: deanperry
     :skype: deanpcmad
     
-  :css_file: theme1/style.css
-  
-  :theme: theme1
+  :theme: theme2
+  :css_file: theme2/blue.css
+  # Theme 1 - theme1/style.css
+  # Theme 2 - theme2/blue.css theme2/red.css
 
   :slider_enable: true  # true to enable slider or false to disable it
   :slider_effect_duration: 2000  # how long should the slider transition effect (fade) last? 1 second = 1000
