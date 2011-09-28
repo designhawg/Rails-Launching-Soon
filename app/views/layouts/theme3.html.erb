@@ -54,14 +54,32 @@ body{
 		</div>
 		<h4 class='label'>GET NOTIFIED</h4>
 		<div id='action'>
-				<form action='#' method='post' id='contact'>
-					<fieldset id='form-container'>
-						<input type='email' id='email' name='email' placeholder='Enter Your Email Address, Get notified!' class='required'>
-						<input type='submit' id='submit' value='Notify Me' class='required email'>
-					</fieldset>
+			<% if APP_CONFIG[:campaign_monitor] == true %>
+			<!-- campaign monitor -->
+				<form action="http://<%= APP_CONFIG[:campaign_monitor_url] %>.createsend.com/t/r/s/fhltyr/" method="post" id="contact">
+				<fieldset id='form-container'>
+					<input type="text" name="cm-fhltyr-fhltyr" id="email" placeholder="Enter Your Email Address, Get notified!" class='required' />
+					<input type="submit" value="Subscribe" id="submit" class='required email' />
+				</fieldset>
 				</form>
+			<% else %>
+				<!-- campaign_monitor false -->
+			<% end %>
+
+			<% if APP_CONFIG[:mail_chimp] == true %>
+			<!-- mailchimp -->
+				<form action="http://<%= APP_CONFIG[:mail_chimp_url] %>.<%= APP_CONFIG[:mail_chimp_server_id] %>.list-manage1.com/subscribe/post" method="post" id="contact">
+				<input type="hidden" name="u" value="<%= APP_CONFIG[:mail_chimp_hidden_u] %>">
+				<input type="hidden" name="id" value="<%= APP_CONFIG[:mail_chimp_hidden_id] %>">
+				<fieldset id='form-container'>
+					<input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" placeholder="Enter Your Email Address, Get notified!" id="email" class="required">
+					<input type="submit" value="Notify Me" id="submit" class="required email"/>
+				</fieldset>
+				</form>
+			<% else %>
+				<!-- mail_chimp false -->
+			<% end %>
 		</div>
-		
 		<div id='solid-margin' style='height:30px'></div>
 	</div>
 	
