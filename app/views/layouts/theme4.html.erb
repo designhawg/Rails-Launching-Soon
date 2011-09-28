@@ -117,9 +117,7 @@ header { background-image: url(/assets/theme4/bg_header_white.png); }
 				<%= javascript_include_tag 'theme4/jquery.countdown.min.js' %>
 		  	<script>
 				$(function() {
-					launchTime = new Date(); // Set launch: [year], [month], [day], [hour]...
-						launchTime.setDate(launchTime.getDate() + 15); // Add 15 days
-					$("#countdown").countdown({until: launchTime, format: "odHMS"});
+					$("#countdown").countdown({until: new Date(<%= APP_CONFIG[:launch_year] %>, <%= APP_CONFIG[:launch_month] %>, <%= APP_CONFIG[:launch_day] %>, <%= APP_CONFIG[:launch_hour] %>, <%= APP_CONFIG[:launch_minutes] %>), format: "odHMS"});
 				});
 			  </script>
 			  <section class="countdown">
