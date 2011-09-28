@@ -1,0 +1,20 @@
+<!-- <%= APP_CONFIG[:site][:site_name] %>  -->
+<!-- Powered by Rails Launching Soon -->
+<!-- http://github.com/deanperry/Rails-Launching-Soon -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title><%= APP_CONFIG[:site][:site_name] %></title>
+	<%= stylesheet_link_tag APP_CONFIG[:css_file] %>
+	<%= javascript_include_tag 'application' %>
+	
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold' rel='stylesheet' type='text/css'>
+
+	<!--[if lt IE 9]>
+		<%= stylesheet_link_tag 'iesucks' %>
+		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js">var IE7_PNG_SUFFIX = ".png";</script>
+	<![endif]-->
+
+</head>

@@ -1,0 +1,89 @@
+<%= render 'layouts/header'%>
+<body>
+	
+<div id="root">
+	<div id="under-construction">
+		<h1><%= APP_CONFIG[:site][:header] %></h1>
+		<h2><%= APP_CONFIG[:site][:tagline] %></h2>
+	</div>
+	<% if APP_CONFIG[:launch_enable] %>
+	<div id="countdown"></div>
+	<% end %>
+	<div id="slider">
+		
+		<div id="imgcontainer">
+			<%= image_tag APP_CONFIG[:slider_image1], :alt => "", :title => "", :class => "sliderimg" %>
+			<%= image_tag APP_CONFIG[:slider_image2], :alt => "", :title => "", :class => "sliderimg" %>
+			<%= image_tag APP_CONFIG[:slider_image3], :alt => "", :title => "", :class => "sliderimg" %>
+		</div>
+		
+		<div id="slider-bottom">
+			<% if APP_CONFIG[:launch_progress] %>
+				<div id="progress-text1">Current Progress:</div>
+				<div id="progressbar" class="ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="56">
+					<div class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: <%= APP_CONFIG[:launch_progress] %>%; "><%= APP_CONFIG[:launch_progress] %>%</div>
+				</div>
+			<% end %>
+			
+			<% if APP_CONFIG[:campaign_monitor] == true %>
+			<!-- campaign monitor -->
+				<div id="progress-text1">Sign up for updates</div>
+				<form action="http://<%= APP_CONFIG[:campaign_monitor_url] %>.createsend.com/t/r/s/fhltyr/" method="post" id="subForm">
+				<div id="progressbar">
+					<input type="text" name="cm-fhltyr-fhltyr" id="fhltyr-fhltyr" size="35" placeholder="email address" style="float: left;margin-top: 3px;margin-left: 5px;" />
+					<input type="submit" value="Subscribe" style="float: right;margin-top: 3px;margin-right: 5px;" />
+				</div>
+				</form>
+			<% else %>
+				<!-- campaign_monitor false -->
+			<% end %>
+
+			<% if APP_CONFIG[:mail_chimp] == true %>
+			<!-- mailchimp -->
+				<div id="progress-text1">Sign up for updates</div>
+				<form action="http://<%= APP_CONFIG[:mail_chimp_url] %>.<%= APP_CONFIG[:mail_chimp_server_id] %>.list-manage1.com/subscribe/post" method="post" id="progressbar">
+				<input type="hidden" name="u" value="<%= APP_CONFIG[:mail_chimp_hidden_u] %>">
+				<input type="hidden" name="id" value="<%= APP_CONFIG[:mail_chimp_hidden_id] %>">
+				<div>
+					<input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="35" placeholder="email address" style="float: left;margin-top: 3px;margin-left: 5px;">
+					<input type="submit" value="Subscribe" style="float: right;margin-top: 3px;margin-right: 5px;" />
+				</div>
+				</form>
+
+			<% else %>
+				<!-- mail_chimp false -->
+			<% end %>
+
+			<div id="social">
+				<div id="social-links">
+					<% if APP_CONFIG[:site][:twitter] %>
+						<div class="social-link">
+							<a href="http://twitter.com/<%= APP_CONFIG[:site][:twitter] %>" title="Follow me on Twitter!"><img src="assets/theme1/twitter.png" alt="Twitter" width="25" /></a>
+							<img src="assets/theme1/twitter_grey.png" alt="Twitter" width="25" class="greyscale-img" />
+						</div>
+					<% end %>
+					<% if APP_CONFIG[:site][:facebook] %>
+						<div class="social-link">
+							<a href="http://facebook.com/<%= APP_CONFIG[:site][:facebook] %>" title="Watch out on Facebook!"><img src="assets/theme1/facebook.png" alt="Facebook" width="25" /></a>
+							<img src="assets/theme1/facebook_grey.png" alt="Facebook" width="25" class="greyscale-img" />
+						</div>
+					<% end %>
+					<% if APP_CONFIG[:site][:skype] %>
+						<div class="social-link">
+							<a href="skype://<%= APP_CONFIG[:site][:skype] %>" title="Let's talk on Skype!"><img src="assets/theme1/skype.png" alt="Skype" width="25" /></a>
+							<img src="assets/theme1/skype_grey.png" alt="Skype" width="25" class="greyscale-img" />
+						</div>
+					<% end %>
+					<div class="clear"></div>
+				</div>
+				<span id="social-text">
+					Write me a <%= link_to 'mail', APP_CONFIG[:site][:email] %> or be Social!&nbsp;&nbsp;
+				</span>
+			</div>
+		</div>
+	</div>
+	
+	<div id="shadow"></div>
+</div>	
+
+<%= render 'layouts/footer'%>
