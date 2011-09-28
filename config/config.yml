@@ -9,6 +9,8 @@ defaults: &defaults
     :skype: deanpcmad
     
   :css_file: style.css
+  
+  :theme: theme1
 
   :slider_enable: true  # true to enable slider or false to disable it
   :slider_effect_duration: 2000  # how long should the slider transition effect (fade) last? 1 second = 1000
