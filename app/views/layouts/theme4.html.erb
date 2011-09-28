@@ -158,60 +158,36 @@ header { background-image: url(/assets/theme4/bg_header_white.png); }
 			<% end %>
 			
 			<% if APP_CONFIG[:subscribe_enable] == true %>
-			  <script>
-			    $(function() {
-					$("input.submit").click(function (event) {
-						event.preventDefault();
-						event.returnValue = false;
-						$.ajax({
-							type: "POST",
-							url: "subscribe.php",
-							data: {email: $("input[name=email]").val()},
-							success: function(data) {
-								if (data == "successful") {
-									$(".subscribe p").html("Thanks for your interest! We will let you know.").slideDown();
-								} else if (data == "already_subscribed") {
-									$(".subscribe p").html("This email is already subscribed.").slideDown();
-								} else if (data == "invalid_email") {
-									$(".subscribe p").html("This email is invalid.").slideDown();
-								} else {
-									$(".subscribe p").html("Something went wrong. Please try again.").slideDown();	
-								}
-							},
-							error: function () {
-								$(".subscribe p").html("Subscription is not available.").slideDown();
-							}
-						});
-					});
-				});
-			  </script>
-			  <section class="subscribe">
-				<p></p>
-				<form method="post">
-				  <input name="email" placeholder="Your e-mail address...">
-				  <input type="submit" class="submit" value="Notify me">
-				</form>
-			  </section>
+				<% if APP_CONFIG[:campaign_monitor] == true %>
+				<!-- campaign monitor -->
+				<section class="subscribe">
+					<form action="http://<%= APP_CONFIG[:campaign_monitor_url] %>.createsend.com/t/r/s/fhltyr/" method="post" id="contact">
+					<fieldset id='form-container'>
+						<input type="text" name="cm-fhltyr-fhltyr" id="email" placeholder="Your email address..." id="email"/>
+						<input type="submit" value="Subscribe" class="submit" />
+					</fieldset>
+					</form>
+				</section>
+				<% else %>
+					<!-- campaign_monitor false -->
+				<% end %>
+
+				<% if APP_CONFIG[:mail_chimp] == true %>
+				<!-- mailchimp -->
+				<section class="subscribe">
+					<form action="http://<%= APP_CONFIG[:mail_chimp_url] %>.<%= APP_CONFIG[:mail_chimp_server_id] %>.list-manage1.com/subscribe/post" method="post" id="contact">
+					<input type="hidden" name="u" value="<%= APP_CONFIG[:mail_chimp_hidden_u] %>">
+					<input type="hidden" name="id" value="<%= APP_CONFIG[:mail_chimp_hidden_id] %>">
+					<fieldset id='form-container'>
+						<input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" placeholder="Your email address..." id="email" >
+						<input type="submit" value="Notify Me" class="submit"/>
+					</fieldset>
+					</form>
+				</section>
+				<% else %>
+					<!-- mail_chimp false -->
+				<% end %>
 			<% end %>
-		  <!-- <script>
-		    $(function() {
-				$("#show_more_info").click(function () {
-					$("#main_page").fadeOut("slow", function () {
-						$("#more_info_page").fadeIn("slow");				
-					});
-				});
-				$("#show_main").click(function () {
-					$("#more_info_page").fadeOut("slow", function () {
-						$("#main_page").fadeIn("slow");				
-					});
-				});
-			});
-		  </script>
-		  <section class="more_info">
-			<a href="#" id="show_more_info" class="button">More information</a>
-		  </section>
-	  </div> -->
-	  
 	</div>
   </div></div>
 
